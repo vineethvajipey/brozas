@@ -1,0 +1,37 @@
+/* Base layout styles replacing Tailwind utilities */
+body {
+  height: 100vh; /* h-screen */
+  margin: 0; /* m-0 */
+  display: grid; /* grid */
+  place-items: center; /* place-items-center */
+  font-family: "Georgia", "Times New Roman", serif; /* Serif font for body text */
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-family: "Times New Roman", "Arial Black", "Helvetica Neue", sans-serif; /* Modern bold display font */
+}
+
+.poem {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode",
+    sans-serif; /* Friendly typeface */
+}
+
+#app {
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  align-items: center; /* items-center */
+}
+
+#app img {
+  width: 420px; /* w-[420px] */
+  height: auto; /* h-auto */
+  display: block; /* block */
+}
