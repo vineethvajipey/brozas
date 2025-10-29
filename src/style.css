@@ -1,10 +1,7 @@
 /* Base layout styles replacing Tailwind utilities */
 body {
-  height: 100vh; /* h-screen */
-  margin: 0; /* m-0 */
-  display: grid; /* grid */
-  place-items: center; /* place-items-center */
-  font-family: "Georgia", "Times New Roman", serif; /* Serif font for body text */
+  margin: 0;
+  font-family: "Georgia", "Times New Roman", serif;
 }
 
 .title {
@@ -13,25 +10,48 @@ body {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  font-family: "Times New Roman", "Arial Black", "Helvetica Neue", sans-serif; /* Modern bold display font */
+  font-family: "Times New Roman", "Arial Black", "Helvetica Neue", sans-serif;
 }
 
-.poem {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode",
-    sans-serif; /* Friendly typeface */
+#stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
 }
 
-#app {
-  display: flex; /* flex */
-  flex-direction: column; /* flex-col */
-  align-items: center; /* items-center */
+.item-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-#app img {
-  width: 420px; /* w-[420px] */
-  height: auto; /* h-auto */
-  display: block; /* block */
+.item-container img {
+  width: 420px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.stanza {
+  position: absolute;
+  font-size: 1.2rem;
+  font-family: "Georgia", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  max-width: 300px;
+  z-index: 1;
+}
+
+.stanza.left {
+  left: 2rem;
+  text-align: left;
+}
+
+.stanza.right {
+  right: 2rem;
+  text-align: right;
 }

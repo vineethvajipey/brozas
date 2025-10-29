@@ -17,14 +17,39 @@ const images = [
   "/images/.png",
 ];
 
-const app = document.getElementById("app");
+const poemStanzas = [
+  "lil guy told me he was my friend",
+  "but the fish in the sea, aren't closer than you and me",
+  "like sharp blades of grass, our eye don't dart and dash",
+  "the lines blurr together, me as you & you as me",
+];
+
+const stack = document.getElementById("stack");
 const fragment = document.createDocumentFragment();
 
-images.forEach((src) => {
+images.forEach((src, index) => {
+  // Create container for image and potential stanza
+  const container = document.createElement("div");
+  container.className = "item-container";
+
+  // Add stanza on every other image (2nd, 4th, 6th, 8th, etc.)
+  if (index % 2 === 0) {
+    const stanzaIndex = Math.floor(index / 2);
+    if (stanzaIndex < poemStanzas.length) {
+      const stanza = document.createElement("div");
+      stanza.className = `stanza ${stanzaIndex % 2 === 0 ? "left" : "right"}`;
+      stanza.textContent = poemStanzas[stanzaIndex];
+      container.appendChild(stanza);
+    }
+  }
+
+  // Add image
   const img = document.createElement("img");
   img.src = src;
   img.alt = "";
-  fragment.appendChild(img);
+  container.appendChild(img);
+
+  fragment.appendChild(container);
 });
 
-app.appendChild(fragment);
+stack.appendChild(fragment);
